@@ -1,0 +1,32 @@
+name: workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    
+      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+        
+      - name: npm install
+        run : npm install
+
+      - name: npm test
+        run : npm test
+        
+      - name: npm run build
+        run : npm run build
+
+      
+
